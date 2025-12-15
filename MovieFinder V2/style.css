@@ -1,0 +1,194 @@
+/* ===== ОБЩИЕ НАСТРОЙКИ ===== */
+
+/* Сбрасываем стандартные отступы */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Шрифт и плавные переходы */
+body {
+  font-family: Arial, Helvetica, sans-serif; /* основной шрифт */
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===== ТЕМЫ ===== */
+
+/* Тёмная тема */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Светлая тема */
+body.light {
+  background-color: #f2f2f2;
+  color: #000000;
+}
+
+/* ===== HEADER ===== */
+header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+
+/* Заголовок */
+header h1 {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+/* Панель управления */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ===== INPUT / SELECT / BUTTON ===== */
+input, select, button {
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  transition: all 0.3s;
+}
+
+/* Поле поиска */
+input {
+  width: 200px;
+}
+
+/* Кнопки */
+button {
+  cursor: pointer;
+  background-color: #ff9800;
+  color: #000;
+}
+
+/* Наведение на кнопку */
+button:hover {
+  background-color: #ffa726;
+  transform: scale(1.05);
+}
+
+/* ===== СПИСОК ФИЛЬМОВ ===== */
+#movieList {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+/* ===== КАРТОЧКА ФИЛЬМА ===== */
+.movie-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+/* Светлая тема для карточек */
+body.light .movie-card {
+  background-color: #ffffff;
+}
+
+/* Hover эффект */
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== ПОСТЕР ===== */
+.movie-card img {
+  width: 100%;         /* ширина карточки */
+  height: 260px;       /* фиксированная высота */
+  object-fit: cover;   /* обрезает без растягивания */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Название фильма */
+.movie-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+/* Год + жанр + рейтинг */
+.movie-card p {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* ===== АНИМАЦИЯ ПОЯВЛЕНИЯ ===== */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== СТРАНИЦА ФИЛЬМА ===== */
+.movie-details {
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Постер фильма */
+.movie-details img {
+  width: 280px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+/* Hover эффект для постера */
+.movie-details img:hover {
+  transform: scale(1.03);
+}
+
+/* Заголовок фильма */
+.movie-details h1 {
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+/* Метаданные (год, жанр, рейтинг) */
+.movie-details #meta {
+  font-size: 16px;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+/* Описание фильма */
+.movie-details #description {
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Кнопка "Назад" */
+.back {
+  display: inline-block;
+  margin: 20px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.back:hover {
+  color: #ff9800;
+}

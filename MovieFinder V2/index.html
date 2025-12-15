@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Library</title>
+  <!-- Подключаем CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Подключаем jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Подключаем JS главной страницы -->
+  <script src="index.js" defer></script>
+</head>
+<body class="dark"><!-- По умолчанию темная тема -->
+
+  <!-- Шапка сайта -->
+  <header>
+    <h1>Movie Library</h1>
+
+    <!-- Панель управления: поиск, фильтр по жанру, смена темы -->
+    <div class="controls">
+      <!-- Поиск фильмов по названию -->
+      <input type="text" id="searchInput" placeholder="Search movies...">
+      
+      <!-- Фильтр по жанру -->
+      <select id="genreFilter">
+        <option value="all">All genres</option>
+        <option value="Action">Action</option>
+        <option value="Drama">Drama</option>
+        <option value="Crime">Crime</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Sports">Sports</option>
+      </select>
+
+      <!-- Кнопка смены темы -->
+      <button id="themeBtn">Change theme</button>
+    </div>
+  </header>
+
+  <!-- Основной контейнер для карточек фильмов -->
+  <main id="movieList"></main>
+
+</body>
+</html>
